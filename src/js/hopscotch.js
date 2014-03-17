@@ -572,7 +572,12 @@
 
       // SET POSITION
       boundingRect = targetEl.getBoundingClientRect();
-      if (step.placement === 'top') {
+      if (step.placement === 'center') {
+        step.fixedElement = true;
+        step.yOffset = 'center'
+        step.xOffset = 'center'
+      }
+      else if (step.placement === 'top') {
         bubbleHeight = el.offsetHeight;
         top = (boundingRect.top - bubbleHeight) - this.opt.arrowWidth;
         left = boundingRect.left;
